@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Directory Listing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+ 
+        .directory {
+            font-weight: bold;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+ 
+        .directory-icon {
+            margin-right: 5px;
+        }
+ 
+        .file {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+ 
+        .indent {
+            margin-left: 20px;
+        }
+ 
+        .collapsed {
+            display: none;
+        }
+ 
+        .empty-directory {
+            background-color: #C0FFC0;
+        }
+        .table {
+        border-collapse: collapse;
+        }
+ 
+        td {
+        padding: 5px;
+        border: none;
+        }
+ 
+        .left {
+        text-align: left;
+        width: 250px; /* 调整大小文本的列宽 */
+        }
+ 
+        .center {
+        text-align: center;
+        width: 180px; /* 调整大小文本的列宽 */
+        }
+ 
+        .right {
+        text-align: right;
+        width: 110px; /* 调整大小文本的列宽 */
+        }
+ 
+    </style>
+    <script>
+        function toggleDirectory(element) {
+            var subDirectory = element.nextElementSibling;
+            if (subDirectory.style.display === 'none') {
+                subDirectory.style.display = 'block';
+            } else {
+                subDirectory.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>Directory Listing</h2>
+<table class="table">
+  <tr>
+    <td class="left">文件名</td>
+    <td class="center">Date 修改时间</td>
+    <td class="right">大小</td>
+  </tr>
+</table>
+<div style="width:650px;">
+    <hr>
+    <?php
+    function listDirectoriesAndFiles($dir, $indent = '') {
+        $result = '';
+ 
+        // 扫描当前目录下的文件和目录
+        $files = scandir($dir);
+ 
+        $directories = [];
+        $filesList = [];
+ 
+        foreach ($files as $file) {
+            if ($file === '.' || $file === '..') {
+                continue;
+            }
+ 
+            $filePath = $dir . '/' . $file;
+ 
+            if (is_dir($filePath)) {
+                // 如果是目录，将目录名添加到 $directories 数组
+                $directories[] = $file;
+            } else {
+                // 如果是文件，将文件名添加到 $filesList 数组
+                $filesList[] = $file;
+            }
+        }
+ 
+        // 对目录和文件列表进行排序
+        sort($directories);
+        sort($filesList);
+ 
+        // 输出目录列表
+        foreach ($directories as $directory) {
+            $subDirectoriesAndFiles = listDirectoriesAndFiles($dir . '/' . $directory, $indent . '<span class="indent"></span>');
+ 
+            $result .= '<div class="directory" onclick="toggleDirectory(this)">';
+            $result .= $indent . '<span class="directory-icon">&#128194;</span>' . $directory . '->';
+            $result .= '</div>';
+ 
+            $result .= '<div class="collapsed">';
+            $result .= $subDirectoriesAndFiles;
+            $result .= '</div>';
+        }
+        
+        $result .= '<table class="table file">';
+        // 输出文件列表
+        foreach ($filesList as $file) {
+            $filePath = $dir . '/' . $file;
+            $fileSize = filesize($filePath);
+            $fileSizeFormatted = formatFileSize($fileSize);
+            $fileModified = date("Y-m-d H:i:s", filemtime($filePath));
+ 
+            $result .= '<tr>';
+            $result .= '<td class="left"><a href="' . $filePath . '" target="_blank">' . $file . '</a></td>';
+            $result .= '<td class="center">' . $fileModified . '</td>';
+            $result .= '<td class="right">' . $fileSizeFormatted . '</td>';
+            $result .= '</tr>';
+        }
+        $result .= '</table>';
+        $result .= '<div style="border: 1px dashed green; width: 650px;"></div>';
+ 
+ 
+        if (empty($directories) && empty($filesList)) {
+            $result .= '<div class="file empty-directory">';
+            $result .= $indent . 'Empty Directory';
+            $result .= '</div>';
+        }
+ 
+返回$results；
+    }
+ 
+函数 formatFileSize（$Size）{
+$units = array('B', 'KB', 'MB', 'GB', 'TB');
+$i = 0;
+$size /= 1024;
+$i++;
+$result .= '</table>';
+        }
+$result.='<div style="border:1px虚线绿色；width:650px；"></div>'；
+    }
+ 
+if (empty($directories) && empty($filesList)) {
+$result .= '<div class="file empty-directory">';
+ 
+$result .= $indent . 'Empty Directory';
+$result .= '</div>';
+ 
+$result .= '<td class="right">' . $fileSizeFormatted . '</td>';
+$result .= '<td class="center">' . $fileModified . '</td>';
+    ?>
+</div>
+ 
+</body>
+</html>
