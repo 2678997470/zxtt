@@ -2,48 +2,28 @@
 <html>
 <head>
 	<title>文件下载</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			text-align: center;
-		}
-		.file-list {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-		}
-		.file-list li {
-			margin-bottom: 10px;
-		}
-		.file-list li a {
-			color: #337ab7;
-			text-decoration: none;
-		}
-		.file-list li a:hover {
-			color: #23527c;
-		}
-	</style>
 </head>
 <body>
 	<h1>文件下载</h1>
-	<ul class="file-list">
-		<li><a href="4399pc.py" download="4399pc.py">4399pc.py</a></li>
-		<li><a href="CE6.8.1.zip" download="CE6.8.1.zip">CE6.8.1.zip</a></li>
-		<li><a href="Cheat Engine 7.0.zip" download="Cheat Engine 7.0.zip">Cheat Engine 7.0.zip</a></li>
-		<li><a href="QQ的一些接口.txt" download="QQ的一些接口.txt">QQ的一些接口.txt</a></li>
-		<li><a href="README.md" download="README.md">README.md</a></li>
-		<li><a href="Yolov3训练环境.txt" download="Yolov3训练环境.txt">Yolov3训练环境.txt</a></li>
-		<li><a href="fiddler.zip" download="fiddler.zip">fiddler.zip</a></li>
-		<li><a href="index.html" download="index.html">index.html</a></li>
-		<li><a href="m.py" download="m.py">m.py</a></li>
-		<li><a href="mizilb.php" download="mizilb.php">mizilb.php</a></li>
-		<li><a href="py_服务器文件.zip" download="py_服务器文件.zip">py_服务器文件.zip</a></li>
-		<li><a href="一个简单的用户存档系统.zip" download="一个简单的用户存档系统.zip">一个简单的用户存档系统.zip</a></li>
-		<li><a href="太阳YOLO模块1.0.7z" download="太阳YOLO模块1.0.7z">太阳YOLO模块1.0.7z</a></li>
-		<li><a href="太阳YOLO训练工具1.0.7z" download="太阳YOLO训练工具1.0.7z">太阳YOLO训练工具1.0.7z</a></li>
-		<li><a href="抓包(1).rar" download="抓包(1).rar">抓包(1).rar</a></li>
-		<li><a href="新建文本文档.txt" download="新建文本文档.txt">新建文本文档.txt</a></li>
-		<li><a href="标注工具.7z" download="标注工具.7z">标注工具.7z</a></li>
+	<ul>
+		<li><a href="4399pc.py">下载 4399pc.py</a></li>
+		<li><a href="4399注入.py">下载 4399注入.py</a></li>
+		<li><a href="CE6.8.1.zip">下载 CE6.8.1.zip</a></li>
+		<li><a href="Cheat Engine 7.0.zip">下载 Cheat Engine 7.0.zip</a></li>
+		<li><a href="QQ的一些接口.txt">下载 QQ的一些接口.txt</a></li>
+		<li><a href="README.md">下载 README.md</a></li>
+		<li><a href="Yolov3训练环境.txt">下载 Yolov3训练环境.txt</a></li>
+		<li><a href="fiddler.zip">下载 fiddler.zip</a></li>
+		<li><a href="index.htmi">下载 index.htmi</a></li>
+		<li><a href="m.py">下载 m.py</a></li>
+		<li><a href="mizilb.php">下载 mizilb.php</a></li>
+		<li><a href="py_ 服务器文件zip">下载 py_ 服务器文件zip</a></li>
+		<li><a href="一个简单的用户存档系统.zip">下载 一个简单的用户存档系统.zip</a></li>
+		<li><a href="C太阳YOLO模 块1.0.7z">下载 C太阳YOLO模 块1.0.7z</a></li>
+		<li><a href="太阳YOLO训练工具1.0.7z">下载 太阳YOLO训练工具1.0.7z</a></li>
+		<li><a href="抓包(1).rar">下载 抓包(1).rar</a></li>
+		<li><a href="新建文本文档.txt">下载 新建文本文档.txt</a></li>
+		<li><a href="标注工具.7z">下载 标注工具.7z</a></li>
 	</ul>
 </body>
 </html>
